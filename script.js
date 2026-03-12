@@ -5,10 +5,12 @@ let lastTime = 0;
 
 window.addEventListener("mousemove", (e) => {
   const now = Date.now();
-  if (now - lastTime < 35) return;
+  if (now - lastTime < 60) return;
   lastTime = now;
 
+  for (let i = 0; i < 2; i++) {
   createSparkle(e.clientX, e.clientY);
+}
 });
 
 function createSparkle(x, y) {
