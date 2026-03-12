@@ -10,6 +10,16 @@ body {
   line-height: 1.55;
 }
 
+.copy-email {
+  cursor: copy;
+  user-select: text;
+  border-bottom: 1px dashed #999;
+}
+
+.copy-email:hover {
+  color: #2f4f8f;
+}
+
 .container {
   max-width: 1120px;
   margin: 0 auto;
