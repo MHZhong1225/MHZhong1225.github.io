@@ -86,7 +86,9 @@ ul {
 
 @media (max-width: 900px) {
   .container {
-    padding: 28px 20px 48px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 44px 28px 64px;
   }
 
   .hero {
