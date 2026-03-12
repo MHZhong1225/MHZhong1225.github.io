@@ -121,26 +121,24 @@ a:hover {
 }
 
 .block h2 {
-  font-size: 28px;
-  margin: 0 0 14px;
-  padding-bottom: 8px;
+  font-size: 22px;
+  margin: 0 0 12px;
+  padding-bottom: 6px;
   border-bottom: 1px solid #e5e5e5;
   font-weight: 700;
 }
 
 .block p,
 .block li {
-  font-size: 22px;
-}
-
-.project {
-  margin-bottom: 18px;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .project h3 {
   margin: 0 0 6px;
-  font-size: 22px;
+  font-size: 18px;
 }
+
 
 ul {
   margin: 0;
@@ -190,29 +188,37 @@ ul {
   }
 
   .subtitle {
-    font-size: 20px;
+    font-size: 16px;
     margin: 14px 0 22px;
   }
 
   .bio p {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .email-line {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .block h2 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .block p,
   .block li,
   .project h3 {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .sparkle {
     display: none;
   }
+}
+
+.block {
+  margin-top: 34px;
+}
+
+.project {
+  margin-bottom: 14px;
 }
