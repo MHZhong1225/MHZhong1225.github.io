@@ -8,6 +8,9 @@ body {
   background: #ffffff;
   color: #111111;
   line-height: 1.7;
+}
+
+body {
   cursor: default;
 }
 
