@@ -1,0 +1,29 @@
+const sparkleChars = ["✦", "✸", "✷", "✺", "✹", "✶"];
+const sparkleColors = ["#ff5c8a", "#ffd43b", "#4dabf7", "#38d9a9", "#c77dff"];
+
+let lastTime = 0;
+
+window.addEventListener("mousemove", (e) => {
+  const now = Date.now();
+  if (now - lastTime < 35) return;
+  lastTime = now;
+
+  createSparkle(e.clientX, e.clientY);
+});
+
+function createSparkle(x, y) {
+  const sparkle = document.createElement("span");
+  sparkle.className = "sparkle";
+  sparkle.textContent = sparkleChars[Math.floor(Math.random() * sparkleChars.length)];
+  sparkle.style.left = x + (Math.random() * 30 - 15) + "px";
+  sparkle.style.top = y + (Math.random() * 20 - 10) + "px";
+  sparkle.style.color = sparkleColors[Math.floor(Math.random() * sparkleColors.length)];
+  sparkle.style.fontSize = 10 + Math.random() * 10 + "px";
+  sparkle.style.filter = "blur(0.3px)";
+
+  document.body.appendChild(sparkle);
+
+  setTimeout(() => {
+    sparkle.remove();
+  }, 700);
+}
