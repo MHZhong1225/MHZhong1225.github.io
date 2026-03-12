@@ -96,8 +96,14 @@ a:hover {
 
 .links {
   display: flex;
-  gap: 16px;
+  gap: 28px;
   flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 8px;
+}
+
+.links span:last-child {
+  font-size: 18px;
 }
 
 .links a {
