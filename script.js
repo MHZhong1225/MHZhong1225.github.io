@@ -8,9 +8,7 @@ window.addEventListener("mousemove", (e) => {
   if (now - lastTime < 60) return;
   lastTime = now;
 
-  for (let i = 0; i < 2; i++) {
   createSparkle(e.clientX, e.clientY);
-}
 });
 
 function createSparkle(x, y) {
@@ -20,8 +18,8 @@ function createSparkle(x, y) {
   sparkle.style.left = x + (Math.random() * 30 - 15) + "px";
   sparkle.style.top = y + (Math.random() * 20 - 10) + "px";
   sparkle.style.color = sparkleColors[Math.floor(Math.random() * sparkleColors.length)];
-  sparkle.style.fontSize = 10 + Math.random() * 10 + "px";
-  sparkle.style.filter = "blur(0.3px)";
+  sparkle.style.fontSize = 10 + Math.random() * 8 + "px";
+  sparkle.style.filter = "blur(0.2px)";
 
   document.body.appendChild(sparkle);
 
@@ -30,28 +28,33 @@ function createSparkle(x, y) {
   }, 700);
 }
 
-const emailEl = document.querySelector(".copy-email");
+/* 邮箱复制功能 */
+document.addEventListener("DOMContentLoaded", () => {
+  const emailEl = document.querySelector(".copy-email");
+  if (!emailEl) return;
 
-if (emailEl) {
-  emailEl.addEventListener("copy", (e) => {
-    e.preventDefault();
-    const realEmail = emailEl.dataset.copy;
-    e.clipboardData.setData("text/plain", realEmail);
-  });
+  const copyText = emailEl.dataset.copy;
+  const displayText = emailEl.dataset.display || emailEl.textContent;
 
-  emailEl.addEventListener("click", async () => {
-    const realEmail = emailEl.dataset.copy;
-
+  async function copyEmail() {
     try {
-      await navigator.clipboard.writeText(realEmail);
-      emailEl.classList.add("copied");
+      await navigator.clipboard.writeText(copyText);
       emailEl.textContent = "Copied!";
+      emailEl.classList.add("copied");
+
       setTimeout(() => {
-        emailEl.textContent = "moc.kooltuo [TA] iatxw";
+        emailEl.textContent = displayText;
         emailEl.classList.remove("copied");
       }, 1000);
-    } catch {
-      // fallback: do nothing
+    } catch (err) {
+      console.error("Clipboard copy failed:", err);
     }
+  }
+
+  emailEl.addEventListener("click", copyEmail);
+
+  emailEl.addEventListener("copy", (e) => {
+    e.preventDefault();
+    e.clipboardData.setData("text/plain", copyText);
   });
-}
+});
