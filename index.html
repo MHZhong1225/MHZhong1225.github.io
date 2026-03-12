@@ -1,104 +1,66 @@
-* {
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MH Zhong</title>
+  <meta name="description" content="MH Zhong 的个人主页" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <img src="avatar.jpg" alt="MH Zhong 头像" class="avatar" />
+      <div class="intro">
+        <h1>MH Zhong</h1>
+        <p class="subtitle">学生 / 研究者 / 开发者</p>
+        <p class="bio">
+          你好，我是 MH Zhong。这里是我的个人主页，用来放个人简介、研究方向、
+          项目经历和联系方式。
+        </p>
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: #ffffff;
-  color: #111111;
-  line-height: 1.7;
-}
+        <div class="links">
+          <a href="mailto:your@email.com">Email</a>
+          <a href="https://github.com/MHZhong1225" target="_blank">GitHub</a>
+          <a href="#" target="_blank">CV</a>
+        </div>
+      </div>
+    </section>
 
-.container {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 56px 24px 80px;
-}
+    <section class="block">
+      <h2>About</h2>
+      <p>
+        我目前关注的方向是：XXX、XXX、XXX。
+        这里可以简短介绍你的学校、专业、研究兴趣或工作内容。
+      </p>
+    </section>
 
-.hero {
-  display: flex;
-  align-items: flex-start;
-  gap: 32px;
-  margin-bottom: 48px;
-}
+    <section class="block">
+      <h2>News</h2>
+      <ul>
+        <li>2026.03 — 个人网站上线</li>
+        <li>2026.02 — 更新项目资料</li>
+        <li>2025.12 — 开始整理研究内容</li>
+      </ul>
+    </section>
 
-.avatar {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 12px;
-  flex-shrink: 0;
-}
+    <section class="block">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Project One</h3>
+        <p>这里写项目简介，一两句话就够。</p>
+      </div>
+      <div class="project">
+        <h3>Project Two</h3>
+        <p>这里写第二个项目简介。</p>
+      </div>
+    </section>
 
-.intro h1 {
-  margin: 0 0 10px;
-  font-size: 40px;
-  font-weight: 700;
-}
-
-.subtitle {
-  margin: 0 0 16px;
-  color: #666;
-  font-size: 18px;
-}
-
-.bio {
-  margin: 0 0 18px;
-  max-width: 580px;
-}
-
-.links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.links a {
-  color: #111;
-  text-decoration: none;
-  border-bottom: 1px solid #111;
-}
-
-.links a:hover {
-  opacity: 0.65;
-}
-
-.block {
-  margin-top: 40px;
-}
-
-.block h2 {
-  font-size: 22px;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.project {
-  margin-bottom: 18px;
-}
-
-.project h3 {
-  margin: 0 0 6px;
-  font-size: 18px;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-@media (max-width: 700px) {
-  .hero {
-    flex-direction: column;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-  }
-
-  .avatar {
-    width: 110px;
-    height: 110px;
-  }
-}
+    <section class="block">
+      <h2>Contact</h2>
+      <p>Email: your@email.com</p>
+      <p>GitHub: github.com/MHZhong1225</p>
+    </section>
+  </main>
+</body>
+</html>
