@@ -29,3 +29,29 @@ function createSparkle(x, y) {
     sparkle.remove();
   }, 700);
 }
+
+const emailEl = document.querySelector(".copy-email");
+
+if (emailEl) {
+  emailEl.addEventListener("copy", (e) => {
+    e.preventDefault();
+    const realEmail = emailEl.dataset.copy;
+    e.clipboardData.setData("text/plain", realEmail);
+  });
+
+  emailEl.addEventListener("click", async () => {
+    const realEmail = emailEl.dataset.copy;
+
+    try {
+      await navigator.clipboard.writeText(realEmail);
+      emailEl.classList.add("copied");
+      emailEl.textContent = "Copied!";
+      setTimeout(() => {
+        emailEl.textContent = "moc.kooltuo [TA] iatxw";
+        emailEl.classList.remove("copied");
+      }, 1000);
+    } catch {
+      // fallback: do nothing
+    }
+  });
+}
