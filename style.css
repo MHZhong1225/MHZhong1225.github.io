@@ -11,6 +11,13 @@ body {
   font-size: 16px;
 }
 
+.custom-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+}
+
 .container {
   max-width: 980px;
   margin: 0 auto;
